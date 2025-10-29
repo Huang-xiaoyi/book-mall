@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.dao.CommentDao">
+<insert id="insertComment">
+    insert into comment (id,book_id,user_id,username,parent_id, create_time, content, is_deleted)
+    values(#{id},#{Bookid},#{Userid},#{username},#{Parentid}, #{createTime}, #{content}, #{is_deleted})
+</insert>
+    
+
+    <select id="selectCommentByBookId" resultType="com.example.springboot.entity.Comment">
+        select c.id, c.book_id as Bookid, c.user_id as Userid,
+               u.name as username,
+               c.parent_id as Parentid, c.content, c.create_time as createTime, c.is_deleted as isDeleted
+        from comment c
+        left join user u on c.user_id = u.id
+        where c.is_deleted = 0
+        <if test="BookId != null">
+            AND c.book_id = #{BookId}
+        </if>
+        order by c.create_time desc
+    </select>
+
+    <update id="softDelete">
+        UPDATE comment
+        SET is_deleted = 1
+        WHERE id = #{id}
+    </update>
+
+    <delete id="hardDelete">
+        DELETE FROM comment
+        WHERE id = #{id}
+    </delete>
+</mapper>

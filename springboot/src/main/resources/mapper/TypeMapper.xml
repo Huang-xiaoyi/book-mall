@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.dao.TypeDao">
+<select id="selectAll" resultType="com.example.springboot.entity.Type">
+    select * from type
+    <where>
+        <if test="name != null"> and name like concat('%', #{name}, '%')</if>
+    </where>
+</select>
+<insert id="insertType">
+    insert into type (name)
+    values(#{name})
+</insert>
+    <delete id="deleteById">
+        delete from type
+        where  id = #{id}
+    </delete>
+
+
+    <update id="updateById" parameterType="com.example.springboot.entity.Type">
+        update type
+        <set>
+            <if test="name != null">
+                title = #{name},
+            </if>
+
+        </set>
+        where id = #{id}
+    </update>
+
+
+</mapper>

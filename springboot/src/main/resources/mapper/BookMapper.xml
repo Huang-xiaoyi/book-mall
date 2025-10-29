@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.dao.BookDao">
+<select id="selectAll" resultType="com.example.springboot.entity.Book">
+    select * from book
+<where>
+    <if test="merchantId != 0"> and merchant_id = #{merchantId}</if>
+</where>
+</select>
+
+    <select id="selectById" resultType="com.example.springboot.entity.Book">
+        select * from book
+        where id = #{id}
+    </select>
+
+    <insert id="insertBook">
+        insert into book (name,pic,price,detail,stock,author,publisher,time,merchant_id,type_id)
+        values(#{name},#{pic},#{price},#{detail},#{stock},#{author},#{publisher},#{time}
+              ,${merchantId},#{typeId})
+    </insert>
+    <delete id="deleteById">
+        delete from book
+        where  id = #{id}
+    </delete>
+
+
+    <update id="updateById" parameterType="com.example.springboot.entity.Book">
+        update book
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="pic != null">
+                pic = #{pic},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="detail != null">
+                detail = #{detail},
+            </if>
+            <if test="stock != null">
+                stock = #{stock},
+            </if>
+            <if test="author != null">
+                author = #{author},
+            </if>
+            <if test="publisher != null">
+                publisher = #{publisher},
+            </if>
+            <if test="time != null">
+                time = #{time},
+            </if>
+            <if test="typeId != null">
+                type_id = #{typeId}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="selectBookByName" resultType="com.example.springboot.entity.Book">
+        select book.*
+        from book
+        <where>
+            <if test="merchantId != 0">
+                name like concat('%', #{name}, '%') and merchant_id = #{merchantId}
+            </if>
+            <if test="merchantId == 0"> name like concat('%', #{name}, '%')</if>
+        </where>
+    </select>
+
+    <select id="selectByTypeId" parameterType="integer" resultType="com.example.springboot.entity.Book">
+        select book.*
+        from book
+        <where>
+            <if test="typeId != null">and type_id = #{typeId}</if>
+        </where>
+    </select>
+
+</mapper>

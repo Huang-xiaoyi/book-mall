@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.dao.MerchantDao">
+<select id="selectAll" resultType="com.example.springboot.entity.Merchant">
+    select * from merchant
+<where>
+    <if test="username != null"> and username like concat('%', #{username}, '%')</if>
+</where>
+</select>
+    <insert id="insertMerchant">
+        insert into merchant (name,username,password,email,avatar,phone,role,address,tag)
+        values(#{name},#{username},#{password},#{email},#{avatar},#{phone},#{role},#{address}
+              ,#{tag})
+    </insert>
+    <delete id="deleteById">
+        delete from merchant
+        where  id = #{id}
+    </delete>
+
+
+    <update id="updateById" parameterType="com.example.springboot.entity.Merchant">
+        update merchant
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="username != null">
+                username = #{username},
+            </if>
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="email != null">
+                email = #{email},
+            </if>
+            <if test="phone != null">
+                phone = #{phone},
+            </if>
+
+            <if test="avatar != null">
+                avatar = #{avatar},
+            </if>
+            <if test="role != null">
+                role = #{role},
+            </if>
+            <if test="address != null">
+                role = #{address},
+            </if>
+            <if test="tag != null">
+                role = #{tag},
+            </if>
+
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="selectMerchantByUsername" resultType="com.example.springboot.entity.Merchant">
+        select merchant.*
+        from merchant
+        where username = #{username}
+    </select>
+    <select id="selectById" resultType="com.example.springboot.entity.Merchant">
+        select merchant.*
+        from merchant
+        where id = #{id}
+    </select>
+
+</mapper>

@@ -1,0 +1,160 @@
+
+
+.search{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.search .search-input{
+    width: 200px;
+    margin-right: 8px;
+}
+
+.table-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+/*框架*/
+.container{
+   border: 1px solid #eee;
+   height: 100vh;
+}
+
+.header{
+    line-height: 60px;
+    border-bottom: 1px solid #d0cfcf;
+    display: flex;
+    align-items: center;
+}
+.header-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.header-name{
+    color: #4c5a73;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-left: 5px
+}
+.aside{
+    overflow: hidden;
+    min-height: 100%;
+    background-color: rgb(84, 92, 100);
+    overflow-y: auto;
+}
+.aside-div{
+    height: 60px;
+     display: flex;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+}
+.aside-div .logo{
+    height: 35px;
+    width: 35px;
+    margin-right: 5px;
+}
+
+.home-div {
+    background-image: url("@/assets/img/bg.png");
+    background-size: cover; /* 确保图片覆盖整个元素 */
+    background-position: center; /* 将图片居中显示 */
+    min-height: 100vh; /* 确保至少为视口高度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-form {
+    width: 380px;
+    padding: 40px 30px;
+    background-color: rgba(241, 239, 239, 0.9);
+    border-radius: 6px;
+}
+
+.home-name {
+    font-size: 25px;
+    color: #409eff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.input-bar {
+    height: 60px;
+    line-height: 60px;
+    width: 100%
+}
+.home-jump{
+    text-align: right;
+    padding-top: 8px;
+    color: #424242;
+    font-size: 14px;
+}
+.home-jump-a{
+    color: #1f7fe5;
+}
+.home-btn {
+    width: 100%;
+    letter-spacing: 5px;
+}
+.register-btn{
+    margin-top: 15px;
+    width: 100%;
+    letter-spacing: 5px;
+}
+.personInfo-avatar {
+    width: 78px;
+    height: 78px;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+.personInfo-card{
+    text-align: center;
+    width: 40%;
+    padding-right: 30px;
+}
+.personInfo-btn{
+    text-align: center; margin-bottom: 10px;
+}
+.notice-card{
+    width: 40%;
+    margin-top: 10px;
+}
+.notice-theme{
+    height: 30px;
+    border-bottom: 1px solid #cccccc;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+.notice-theme .title{
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+.notice-div{
+    display: flex;
+    margin-bottom: 10px;
+}
+.notice-div .content{
+    font-size: 13px;
+    color: #666666;
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.notice-div .time {
+    color: #b0afaf;
+    font-size: 13px;
+    display: flex;
+    width: 20%;
+}
+
+
+
