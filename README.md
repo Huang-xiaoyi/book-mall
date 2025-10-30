@@ -24,3 +24,6 @@
 
 下单功能
 > 用户将书籍放入购物车，进入购物车结账下单功能
+
+## 系统预览
+![png 1](https://github.com/Huang-xiaoyi/book-mall/blob/main/screenshot/2025-10-29notice.png)
