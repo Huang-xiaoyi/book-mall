@@ -27,5 +27,5 @@
 
 ## 系统预览
 ![png 1](https://github.com/Huang-xiaoyi/book-mall/blob/main/screenshot/2025-10-29notice.png)
-![png 2](https://github.com/Huang-xiaoyi/book-mall/blob/main/screenshot/2025-10-29user.png)
-![png 3](https://github.com/Huang-xiaoyi/book-mall/blob/main/screenshot/2025-10-29book.png)
+![png 2](https://github.com/Huang-xiaoyi/book-mall/blob/main/screenshot/2025-10-30user.png)
+![png 3](https://github.com/Huang-xiaoyi/book-mall/blob/main/screenshot/2025-10-30book.png)
