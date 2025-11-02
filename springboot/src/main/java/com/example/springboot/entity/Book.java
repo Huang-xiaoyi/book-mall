@@ -31,11 +31,11 @@ public class Book{
         this.pic = pic;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -100,7 +100,7 @@ public class Book{
     private Integer id;
     private String name;
     private String pic;
-    private String price;
+    private int price;
     private String detail;
     private int stock;
     private String author;

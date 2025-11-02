@@ -18,13 +18,14 @@
       <el-table-column prop="id" label="ID" width="50"></el-table-column>
       <el-table-column prop="pic" label="封面" >
         <template slot-scope="scope">
+          <!--scope.row指放入这一行的消息对象-->
           <img :src="scope.row.pic"
                style="width: 60px; height: 80px; object-fit: cover; border-radius: 4px;"
                alt="封面图片">
         </template>
       </el-table-column>
       <el-table-column prop="name" label="书名" ></el-table-column>
-      <el-table-column prop="author" label="作者"> </el-table-column>
+      <el-table-column prop="price" label="价格"> </el-table-column>
             <el-table-column prop="" label="操作" width="160">
         <template slot-scope="scope">
           <el-button type="primary"  icon="" @click="edit(scope.row)">编辑</el-button>

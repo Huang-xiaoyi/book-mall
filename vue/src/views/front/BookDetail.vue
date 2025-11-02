@@ -28,13 +28,13 @@ object-fit: contain保持图片比例不拉伸-->
       </div></el-col>
       <el-col :span="18"></el-col>
       <el-col :span="6"><div class="purchase-number">
-        <el-input-number v-model="booknum" :min="1" :max="book.stock" label="描述文字"></el-input-number>
+        <el-input-number v-model="booknum" :min="1" :max="book.stock" label="数量"></el-input-number>
         库存{{book.stock}}
       </div></el-col>
     </el-row>
     <el-row :gutter="20">
       <el-col :span="6" :offset="6"><el-button type="warning">收藏</el-button>
-        <el-button type="danger">加入购物车</el-button>
+        <el-button type="danger" @click="addIntoCart">加入购物车</el-button>
       </el-col>
     </el-row>
   </div>
@@ -120,6 +120,9 @@ export default {
       this.$nextTick(() => {
         this.checkDescriptionOverflow();
       });
+    },
+    addIntoCart(){
+      request.post("/cart/insert")
     }
   }
 }

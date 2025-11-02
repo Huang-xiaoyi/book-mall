@@ -2,6 +2,15 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.springboot.dao.AdminDao">
-    <select id="SelectUserCart" resultType="com.example.springboot.entity.Cart"></select>
+<mapper namespace="com.example.springboot.dao.CartDao">
+    <select id="SelectUserCart" resultType="com.example.springboot.entity.Cart">
+        SELECT book.name, book.pic, book.price, num from cart
+        RIGHT JOIN book ON cart.book_id = book.id
+        where user_id = {#userid}
+    </select>
+
+    <insert id="AddCart">
+        insert into cart (book_id, merchant_id, user_id, num)
+        values(#{bookId}, #{merchantId}, #{userId}, #{num})
+    </insert>
 </mapper>

@@ -47,6 +47,31 @@ public class Cart {
         this.num = num;
     }
 
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getBookname() {
+        return bookname;
+    }
+
+    public void setBookname(String bookname) {
+        this.bookname = bookname;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer Id;
@@ -54,4 +79,7 @@ public class Cart {
     public Integer merchant_id;
     public Integer user_id;
     public int num;
+    public String pic;
+    public int price;
+    public String bookname;
 }

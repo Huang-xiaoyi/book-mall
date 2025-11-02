@@ -16,13 +16,9 @@
               <el-menu-item-group>
                 <el-menu-item index="/front/center/userInfo">个人信息</el-menu-item>
                 <el-menu-item index="/front/center/password">修改密码</el-menu-item>
-
+                <el-menu-item index="/front/center/cart">购物车</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
-<!--            <el-menu-item index="2">
-              <i class="el-icon-menu"></i>
-              <span slot="title">导航二</span>
-            </el-menu-item>-->
 
           </el-menu>
         </el-card>

@@ -38,7 +38,7 @@ const routes = [
         children: [
           { path: 'password', name: 'Password', meta: { name: '修改密码' ,title: '修改密码'}, component:() => import('../views/front/center/Password.vue')  },
           { path: 'userInfo', name: 'UserInfo', meta: { name: '个人信息' ,title: '个人信息'}, component:() => import('../views/front/center/UserInfo.vue')  },
-
+          { path: 'cart', name: 'cart', meta: { name: '购物车' ,title: '购物车'}, component:() => import('../views/front/center/Cart.vue')  },
         ]
       },
     ]
